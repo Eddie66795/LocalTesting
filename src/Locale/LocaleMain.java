@@ -1,14 +1,13 @@
+package Locale;
+
 import java.util.Locale;
 
-public class Main {
+public class LocaleMain {
 
-    /*  There are 3 types of constructors for the Locals:
-         1. Locale(String language)
-         2. Locale(String language, String country)
-         3. Locale(String language, String country, String variant)
-    */
-    public Main() {
+    public LocaleMain() {
+        println("LocaleMain: Start");
         local1();
+        println("LocaleMain: End");
     }
 
     // Create a generic English-speaking locale.
@@ -34,9 +33,7 @@ public class Main {
         System.out.println(x);
     }
 
-
-
     public static void main(String[] args) {
-        new Main();
+        new LocaleMain();
     }
 }
