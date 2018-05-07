@@ -9,27 +9,25 @@ public class Main {
     */
     public Main() {
         local1();
-        // local2();
-        // local3();
     }
 
     // Create a generic English-speaking locale.
     public void local1() {
         Locale locale = new Locale("en");
-        String country_code = locale.getDisplayCountry();
-        println("test");
-        println(country_code);
+        println(locale.getDisplayCountry());
     }
 
     // Create an English-speaking, Canadian locale.
     public void local2() {
-        Locale locale2 = new Locale("en", "CA");
+        Locale locale = new Locale("en", "CA");
+        println(locale.getDisplayCountry());
     }
 
     // Create a very specific English-speaking, U.S. locale
     // for Silicon Valley.
     public void local3() {
-        Locale locale3 = new Locale("en", "US", "SiliconValley");
+        Locale locale = new Locale("en", "US", "SiliconValley");
+        println(locale.getDisplayCountry());
     }
 
     public void println(Object x) {
