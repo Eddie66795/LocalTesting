@@ -11,7 +11,7 @@ public class LocaleMain {
 
     public LocaleMain() {
         println("LocaleMain: Start");
-        local2();
+        boolean test = isValidLocale("test");
         println("LocaleMain: End");
     }
 
@@ -29,13 +29,24 @@ public class LocaleMain {
         println(locale.getDisplayCountry());
     }
 
+    //Pass in the required Local and see if it is contained in the list of supported Locals
+    boolean isValidLocale(String value) {
+        Locale[] locales = Locale.getAvailableLocales();
+        for (Locale locale : locales) {
+            if (value.equals(locale.toString())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // Create an English-speaking, Canadian locale.
     public void local2() {
         Locale locale = new Locale("en", "CA");
-        String test = locale.getDisplayCountry();
+        String localCountryCode = locale.getDisplayCountry();
 
         // Get the current time in Hong Kong
-        Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("Hongkong"));
+        Calendar cal = new GregorianCalendar(TimeZone.getTimeZone(localCountryCode));
         int hour12 = cal.get(Calendar.HOUR); // 0..11
         int minutes = cal.get(Calendar.MINUTE); // 0..59
         int seconds = cal.get(Calendar.SECOND); // 0..59
