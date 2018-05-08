@@ -13,7 +13,6 @@ public class LocaleMain {
     public String countryName;
     public Locale locale;
 
-
     public void getLocaleByLanguageAndCountryCode(String language, String countryCode) {
         if(!language.isEmpty() && !countryCode.isEmpty()) {
             locale = new Locale(language, countryCode);
@@ -29,6 +28,10 @@ public class LocaleMain {
 
     public String getCountryName(){
         return countryName;
+    }
+
+    public String displayName() {
+       return locale.getDisplayName();
     }
 
     public String getLanguage() {

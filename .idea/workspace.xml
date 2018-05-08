@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="739e3a81-7183-400b-a0cf-185cce4b6e7f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TimeZones/LocalTimeMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LocalTesting/Locale/LocaleMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LocalTesting/Locale/LocaleMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LocalTesting/LocaleTimes/LocalTimeMain.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Locale/LocaleMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Locale/LocaleMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocaleTimes/LocalTimeMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TimeZones/LocalTimeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TimeZones/LocalTimeMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,17 +15,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LocaleMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LocaleMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Locale/LocaleMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+            <state relative-caret-position="383">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#602#603#0" expanded="true" />
                 <element signature="e#630#631#0" expanded="true" />
                 <element signature="e#722#723#0" expanded="true" />
                 <element signature="e#743#744#0" expanded="true" />
+                <element signature="e#790#791#0" expanded="true" />
+                <element signature="e#825#826#0" expanded="true" />
                 <element signature="e#729#730#0" expanded="true" />
                 <element signature="e#768#769#0" expanded="true" />
                 <element signature="e#948#949#0" expanded="true" />
@@ -39,17 +37,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocalTimeMain.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LocalTimeMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TimeZones/LocalTimeMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="46" />
+            <state relative-caret-position="323">
+              <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#362#363#0" expanded="true" />
                 <element signature="e#397#398#0" expanded="true" />
-                <element signature="e#360#361#0" expanded="true" />
-                <element signature="e#390#391#0" expanded="true" />
+                <element signature="e#1898#1899#0" expanded="true" />
+                <element signature="e#1935#1936#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Locale.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/src.zip!/java/util/Locale.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13">
+              <caret line="834" column="33" selection-start-line="834" selection-start-column="33" selection-end-line="834" selection-end-column="33" />
+              <folding>
+                <element signature="e#29246#29247#0" expanded="true" />
+                <element signature="e#29284#29285#0" expanded="true" />
+                <element signature="e#45429#45430#0" expanded="true" />
+                <element signature="e#45476#45477#0" expanded="true" />
+                <element signature="e#71440#71441#0" expanded="true" />
+                <element signature="e#71510#71511#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,8 +104,8 @@
         <option value="$PROJECT_DIR$/src/LocaleTimes/LocalTimeMain.java" />
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/src/LocaleTime/LocalTimeMain.java" />
-        <option value="$PROJECT_DIR$/src/TimeZones/LocalTimeMain.java" />
         <option value="$PROJECT_DIR$/src/Locale/LocaleMain.java" />
+        <option value="$PROJECT_DIR$/src/TimeZones/LocalTimeMain.java" />
       </list>
     </option>
   </component>
@@ -228,12 +243,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525693508386</updated>
-      <workItem from="1525693512790" duration="8997000" />
+      <workItem from="1525693512790" duration="10062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8997000" />
+    <option name="totallyTimeSpent" value="10062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -291,10 +306,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ReadMe_ISO8601_formating_symbols.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/src.zip!/java/util/Locale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="1162" column="71" selection-start-line="1162" selection-start-column="71" selection-end-line="1162" selection-end-column="71" />
+        <state relative-caret-position="13">
+          <caret line="834" column="33" selection-start-line="834" selection-start-column="33" selection-end-line="834" selection-end-column="33" />
           <folding>
             <element signature="e#29246#29247#0" expanded="true" />
             <element signature="e#29284#29285#0" expanded="true" />
@@ -306,41 +328,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ReadMe_ISO8601_formating_symbols.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TimeZones/LocalTimeMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Locale/LocaleMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state relative-caret-position="383">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#602#603#0" expanded="true" />
             <element signature="e#630#631#0" expanded="true" />
             <element signature="e#722#723#0" expanded="true" />
             <element signature="e#743#744#0" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
             <element signature="e#729#730#0" expanded="true" />
             <element signature="e#768#769#0" expanded="true" />
             <element signature="e#948#949#0" expanded="true" />
             <element signature="e#973#974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TimeZones/LocalTimeMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1935#1936#0" expanded="true" />
           </folding>
         </state>
       </provider>

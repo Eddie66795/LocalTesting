@@ -3,6 +3,8 @@ package TimeZones;
 
 import Locale.LocaleMain;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -14,24 +16,56 @@ public class LocalTimeMain {
 
     private String countryCode = "KE";
     private String language = "SW";
+    private Locale locale;
+    private LocaleMain localeClass;
+
+    private GregorianCalendar gregorianCalendar;
 
     public static void main(String[] args) {
-        new LocalTimeMain();
+        new LocalTimeMain().test();
     }
 
     public LocalTimeMain() {
-        LocaleMain localeClass = new LocaleMain();
+        localeClass = new LocaleMain();
         localeClass.getLocaleByLanguageAndCountryCode(language, countryCode);
-
-        Locale testLocale = localeClass.getLocale();
+        locale = localeClass.getLocale();
 
 //        GregorianCalendar cal = GregorianCalendar
-        println(testLocale.getDisplayCountry());
+//        println(testLocale.getDisplayCountry());
+
 
     }
 
-    public GregorianCalendar GregorianCalendar(String country) {
-        return new GregorianCalendar(TimeZone.getTimeZone(country));
+    public void test() {
+
+        String country = localeClass.getCountryName();
+
+        // create default time zone object
+        TimeZone timezone = TimeZone.getTimeZone(country);
+        println("TimeZone: " + timezone);
+//
+//        // create locale
+//        Locale locale = new Locale("CHINESE", "CHINA");
+//
+//        // get display name for specific locale
+//        String disname = timezone.getDisplayName(locale);
+//
+//        // checking display name
+//        System.out.println("Display name is :" + disname);
+    }
+
+
+    public void test1() {
+//        DecimalFormat decimalFormat = ((DecimalFormat) NumberFormat.getInstance());
+//        decimalFormat.getDecimalFormatSymbols().getDecimalSeparator();
+    }
+
+
+
+
+
+    public void gregorianCalendar(String country) {
+         gregorianCalendar = new GregorianCalendar(TimeZone.getTimeZone(country));
     }
 
     //        // Get the current time in Hong Kong
