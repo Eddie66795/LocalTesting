@@ -1,89 +1,92 @@
 package TimeZones;
 
-
-import Locale.LocaleMain;
-
-import java.text.DecimalFormat;
+import java.time.format.DateTimeFormatter;
 import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import Locale.LocaleMain;
+import java.time.*;
+import java.util.*;
 
 public class LocalTimeMain {
 
-    //Get the timeZone in the given country
-
-    private String countryCode = "KE";
-    private String language = "SW";
+    private String language = "en";
+    private String countryCode = "ZA";
     private Locale locale;
     private LocaleMain localeClass;
 
-    private GregorianCalendar gregorianCalendar;
-
     public static void main(String[] args) {
-        new LocalTimeMain().test();
+        new LocalTimeMain();
     }
 
     public LocalTimeMain() {
         localeClass = new LocaleMain();
         localeClass.getLocaleByLanguageAndCountryCode(language, countryCode);
         locale = localeClass.getLocale();
-
-//        GregorianCalendar cal = GregorianCalendar
-//        println(testLocale.getDisplayCountry());
-
-
+        try {
+            testFormatting();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
-    public void test() {
+    public void testFormatting() {
+        String timeInSa = "2018-05-10T17:36:08Z";
+        Instant instant = Instant.parse(timeInSa);
 
-        String country = localeClass.getCountryName();
-
-        // create default time zone object
-        TimeZone timezone = TimeZone.getTimeZone(country);
-        println("TimeZone: " + timezone);
-//
-//        // create locale
-//        Locale locale = new Locale("CHINESE", "CHINA");
-//
-//        // get display name for specific locale
-//        String disname = timezone.getDisplayName(locale);
-//
-//        // checking display name
-//        System.out.println("Display name is :" + disname);
-    }
-
-
-    public void test1() {
-//        DecimalFormat decimalFormat = ((DecimalFormat) NumberFormat.getInstance());
-//        decimalFormat.getDecimalFormatSymbols().getDecimalSeparator();
+        Locale locale1 = new Locale("sw", "KE");
+        Calendar calendar = new GregorianCalendar(locale1);
+        String[] countryCodes = Locale.getISOCountries();
+        for (String countryCode : countryCodes) {
+            Locale obj = new Locale("", countryCode);
+            System.out.println("Country Code = " + obj.getCountry()
+                    + ", Country Name = " + obj.getDisplayCountry());
+        }
+        ZoneId zoneId = calendar.getTimeZone().toZoneId();
+        ZonedDateTime zonedDateTime =  ZonedDateTime.ofInstant(instant, zoneId);
     }
 
 
+    public String applyNumberFormatting(Object inputAmount, int currencyPrecision, String format) {
+        BigDecimal result = null;
+        if( inputAmount != null ) {
+            if( inputAmount instanceof BigDecimal ) {
+                result = (BigDecimal) inputAmount;
+            } else if( inputAmount instanceof String) {
+                result = new BigDecimal( (String) inputAmount);
+            } else if( inputAmount instanceof BigInteger) {
+                result = new BigDecimal( (BigInteger) inputAmount );
+            } else if( inputAmount instanceof Number ) {
+                result = new BigDecimal( ((Number)inputAmount).doubleValue() );
+            } else {
+                throw new ClassCastException("Not possible to coerce: " + inputAmount);
+            }
+        }
 
-
-
-    public void gregorianCalendar(String country) {
-         gregorianCalendar = new GregorianCalendar(TimeZone.getTimeZone(country));
+        result = result.divide(new BigDecimal(Math.pow(10, currencyPrecision)));
+        return NumberFormat.getCurrencyInstance(getLocale()).format(result);
     }
 
-    //        // Get the current time in Hong Kong
-//
-//        Locale test_local = new Locale("en", "US", "SiliconValley");
-//        Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("Hong kong"));
-//
-//        println("Country: " + locale.getCountry());
-//        println("getDisplayName: " + locale.getDisplayName());
-//        println("getDisplayName: " + locale.getDisplayName());
-//
-//        int hour12 = cal.get(Calendar.HOUR); // 0..11
-//        int minutes = cal.get(Calendar.MINUTE); // 0..59
-//        int seconds = cal.get(Calendar.SECOND); // 0..59
-//        boolean am = cal.get(Calendar.AM_PM) == Calendar.AM;
-
-    public void println(Object x) {
-        System.out.println(x);
+    public String format(final ZonedDateTime zonedDateTime, String pattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern, getLocale());
+        return zonedDateTime.format(formatter);
     }
 
+    public Locale getLocale() {
+        return locale;
+    }
+
+    public double addCurrencyPrecision(double inputAmount, int currencyPrecision) {
+        return inputAmount / Math.pow(10,  currencyPrecision);
+    }
+
+    public String addCurrencySymbol(double inputAmount) {
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(getLocale());
+        return currencyFormatter.format(inputAmount);
+    }
+
+    public String applyFormatting(int inputAmount, String currencyCode, int currencyPrecision) {
+        double value = addCurrencyPrecision(inputAmount, currencyPrecision);
+        return addCurrencySymbol(value);
+    }
 }

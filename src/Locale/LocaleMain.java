@@ -2,10 +2,6 @@ package Locale;
 
 import java.text.NumberFormat;
 import java.util.Locale;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
-
 
 public class LocaleMain {
 
@@ -18,7 +14,6 @@ public class LocaleMain {
             locale = new Locale(language, countryCode);
             countryLanguage = locale.getDisplayLanguage();
             countryName = locale.getDisplayCountry();
-
         }
     }
 
@@ -38,6 +33,26 @@ public class LocaleMain {
        return countryLanguage;
     }
 
+    public void localBuilder(String language, String region) {
+        locale = new Locale.Builder().setLanguage(language).setRegion(region).build();
+    }
+
+    /**
+     * Usage: NumberFormat.format(number) where number can be any valid numerical value
+     *
+     * @param inputLocal
+     * @return NumberFormat based on the local (global) or a specific one requested in the param
+     */
+    public NumberFormat getNumberFormat(Locale inputLocal) {
+        //TODO: We need to validate the inputLocal passed in
+        if(inputLocal.equals(null)) {
+            return NumberFormat.getInstance(locale);
+        } else {
+            return NumberFormat.getInstance(inputLocal);
+        }
+    }
+
+
     public Locale getLocaleByCountryCode(String countryCode) {
         if(!countryCode.isEmpty()) {
             return new Locale(countryCode);
@@ -45,11 +60,12 @@ public class LocaleMain {
         return null;
     }
 
+
     //Pass in the required Local and see if it is contained in the list of supported Locals
-    public boolean isValidLocale(String country) {
+    public boolean isValidLocale(Locale locale) {
         Locale[] locales = Locale.getAvailableLocales();
-        for (Locale locale : locales) {
-            if (country.equals(locale.toString())) {
+        for (Locale iterate : locales) {
+            if (locale.equals(locale.toString())) {
                 return true;
             }
         }
